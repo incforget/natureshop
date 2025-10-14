@@ -1,0 +1,322 @@
+/* Admin Panel Styles */
+html, body {
+    height: 100%;
+}
+
+/* Prevent body scrolling on desktop - let main content handle scrolling */
+@media (min-width: 769px) {
+    html, body {
+        overflow: hidden;
+    }
+}
+
+.admin-sidebar {
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+}
+
+.admin-content {
+    background-color: #f9fafb;
+}
+
+.nav-link {
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.nav-link.active {
+    background-color: rgba(34, 197, 94, 0.2);
+    border-right: 3px solid #22c55e;
+}
+
+/* Mobile Menu Styles */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+#sidebar {
+    transition: transform 0.3s ease;
+}
+
+#sidebar.mobile-hidden {
+    transform: translateX(-100%);
+}
+
+#sidebar.active {
+    transform: translateX(0) !important;
+}
+
+/* Enhanced Dashboard Styles */
+.dashboard-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dashboard-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.stat-icon {
+    transition: all 0.3s ease;
+}
+
+.dashboard-card:hover .stat-icon {
+    transform: scale(1.1);
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pulse-glow {
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+    }
+}
+
+/* Table enhancements */
+.table-row {
+    transition: all 0.2s ease;
+}
+
+.table-row:hover {
+    background-color: #f8fafc;
+    transform: scale(1.01);
+}
+
+/* Button enhancements */
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+/* Loading animation for stats */
+.stat-number {
+    animation: countUp 1s ease-out;
+}
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .admin-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 50;
+    }
+
+    .nav-link {
+        transform: none;
+    }
+
+    .nav-link:hover {
+        transform: none;
+    }
+
+    .table-row:hover {
+        transform: none;
+    }
+
+    .dashboard-card:hover {
+        transform: none;
+    }
+}
+
+/* Print Styles for Order Details */
+@media print {
+    /* Hide navigation, sidebars, and admin interface elements */
+    nav, aside, .admin-sidebar, .admin-header, .admin-footer,
+    .flex.items-center.justify-between.mb-6 button,
+    .border-t.pt-6.bg-gray-50 form,
+    .fixed, .sticky, .absolute,
+    .no-print {
+        display: none !important;
+    }
+
+    /* Show only the order details section */
+    body {
+        background: white !important;
+        color: black !important;
+        font-size: 12pt !important;
+        line-height: 1.4 !important;
+    }
+
+    /* Order details container */
+    .print-order-details {
+        display: block !important;
+        box-shadow: none !important;
+        border: 1px solid #000 !important;
+        margin: 0 !important;
+        padding: 20px !important;
+        background: white !important;
+        max-width: none !important;
+        width: 100% !important;
+    }
+
+    /* Order title */
+    .text-2xl.font-bold.text-gray-900 {
+        font-size: 18pt !important;
+        margin-bottom: 20px !important;
+        color: black !important;
+        border-bottom: 2px solid #000 !important;
+        padding-bottom: 10px !important;
+    }
+
+    /* Information sections */
+    .bg-gray-50.p-4.rounded-lg {
+        background: white !important;
+        border: 1px solid #ccc !important;
+        margin-bottom: 15px !important;
+        padding: 15px !important;
+        border-radius: 0 !important;
+    }
+
+    /* Section headers */
+    .font-semibold.text-gray-900 {
+        color: black !important;
+        font-size: 14pt !important;
+        margin-bottom: 10px !important;
+        border-bottom: 1px solid #666 !important;
+        padding-bottom: 5px !important;
+    }
+
+    /* Text content */
+    .text-sm.text-gray-600,
+    .text-sm.text-red-600 {
+        color: black !important;
+        font-size: 11pt !important;
+    }
+
+    /* Table styling for order items */
+    .overflow-x-auto {
+        overflow: visible !important;
+    }
+
+    .overflow-x-auto table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        margin-top: 10px !important;
+    }
+
+    .overflow-x-auto th,
+    .overflow-x-auto td {
+        border: 1px solid #000 !important;
+        padding: 8px !important;
+        text-align: left !important;
+        font-size: 10pt !important;
+        color: black !important;
+    }
+
+    .overflow-x-auto th {
+        background: #f0f0f0 !important;
+        font-weight: bold !important;
+    }
+
+    /* Status badges - convert to text */
+    .inline-flex.items-center span {
+        background: none !important;
+        color: black !important;
+        padding: 0 !important;
+        font-weight: normal !important;
+    }
+
+    /* Hide icons in print */
+    .fas, .far, .fab {
+        display: none !important;
+    }
+
+    /* Page break controls */
+    .page-break-before {
+        page-break-before: always;
+    }
+
+    .page-break-after {
+        page-break-after: always;
+    }
+
+    /* Ensure proper page margins */
+    @page {
+        margin: 0.5in;
+        size: A4;
+    }
+
+    /* Hide any buttons or interactive elements */
+    button, input, select, textarea, a[href]:not([href="#"]) {
+        display: none !important;
+    }
+
+    /* Show only text content */
+    .print-only {
+        display: block !important;
+    }
+
+    /* Grid layouts for print */
+    .grid {
+        display: block !important;
+    }
+
+    .grid-cols-1,
+    .grid-cols-2,
+    .lg\:grid-cols-2 {
+        display: block !important;
+    }
+
+    .gap-6 > * {
+        margin-bottom: 20px !important;
+    }
+}
