@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['user_id'] = $user_id;
 
     // Redirect to order success
-    header("Location: order_success.php?order_id=$order_id");
+    header("Location: /order-success/$order_id");
     exit;
 }
 
@@ -220,7 +220,7 @@ include 'includes/header.php';
 
     <?php include 'includes/footer.php'; ?>
 
-    <script src="js/app.js"></script>
+    <script src="/js/app.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             loadCartForCheckout();
@@ -263,7 +263,7 @@ include 'includes/header.php';
                     <!-- Mobile Layout -->
                     <div class="md:hidden">
                         <div class="flex items-start space-x-4">
-                            <img src="assets/images/${item.image}" alt="${item.name}" class="cart-item-image flex-shrink-0" onerror="this.src='assets/images/placeholder.jpg'">
+                            <img src="/assets/images/${item.image}" alt="${item.name}" class="cart-item-image flex-shrink-0" onerror="this.src='/assets/images/placeholder.jpg'">
                             <div class="flex-1 min-w-0">
                                 <!-- Name and Price in first row -->
                                 <div class="flex items-center justify-between mb-1">
@@ -293,7 +293,7 @@ include 'includes/header.php';
 
                     <!-- Desktop Layout -->
                     <div class="hidden md:flex items-center space-x-4 bg-gray-50 p-4 rounded-xl border border-gray-200 hover:shadow-md transition-shadow">
-                        <img src="assets/images/${item.image}" alt="${item.name}" class="w-20 h-20 object-cover rounded-lg shadow-sm flex-shrink-0">
+                        <img src="/assets/images/${item.image}" alt="${item.name}" class="w-20 h-20 object-cover rounded-lg shadow-sm flex-shrink-0">
                         <div class="flex-1 min-w-0">
                             <h3 class="font-bold text-gray-800 whitespace-nowrap">${item.name}</h3>
                             ${item.size ? `<p class="text-sm text-gray-500 mb-1">Size: ${item.size}</p>` : ''}

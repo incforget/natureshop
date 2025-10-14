@@ -208,7 +208,7 @@ function animateToCart(event, imageSrc) {
     if (imageSrc && imageSrc !== '') {
         // Use product image
         const img = document.createElement('img');
-        img.src = 'assets/images/' + imageSrc;
+        img.src = '/assets/images/' + imageSrc;
         img.className = 'w-full h-full object-cover rounded-full';
         img.onerror = function() {
             // Fallback to cart icon if image fails to load
@@ -524,7 +524,7 @@ function renderCartItems(cart = null) {
                 <!-- Mobile Layout -->
                 <div class="md:hidden">
                     <div class="flex items-start space-x-4">
-                        <img src="assets/images/${item.image}" alt="${item.name}" class="cart-item-image flex-shrink-0" onerror="this.src='assets/images/placeholder.jpg'">
+                        <img src="/assets/images/${item.image}" alt="${item.name}" class="cart-item-image flex-shrink-0" onerror="this.src='/assets/images/placeholder.jpg'">
                         <div class="flex-1 min-w-0">
                             <!-- Name and Price in first row -->
                             <div class="flex items-center justify-between mb-1">
@@ -554,7 +554,7 @@ function renderCartItems(cart = null) {
 
                 <!-- Desktop Layout -->
                 <div class="hidden md:flex items-center space-x-4">
-                    <img src="assets/images/${item.image}" alt="${item.name}" class="cart-item-image flex-shrink-0" onerror="this.src='assets/images/placeholder.jpg'">
+                    <img src="/assets/images/${item.image}" alt="${item.name}" class="cart-item-image flex-shrink-0" onerror="this.src='/assets/images/placeholder.jpg'">
                     <div class="flex-1 min-w-0">
                         <h4 class="font-semibold text-gray-900 truncate">${item.name}</h4>
                         ${item.size ? `<p class="text-sm text-gray-600 mt-1">Size: ${item.size}</p>` : ''}

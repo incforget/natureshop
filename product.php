@@ -22,12 +22,12 @@ include 'includes/header.php';
         <nav class="flex mb-6" aria-label="Breadcrumb navigation">
             <ol class="inline-flex items-center space-x-1 md:space-x-3">
                 <li class="inline-flex items-center">
-                    <a href="index.php" class="text-gray-700 hover:text-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md px-2 py-1 transition-colors" aria-label="Go to home page">Home</a>
+                    <a href="/" class="text-gray-700 hover:text-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md px-2 py-1 transition-colors" aria-label="Go to home page">Home</a>
                 </li>
                 <li>
                     <div class="flex items-center">
                         <i class="fas fa-chevron-right text-gray-400 mx-2" aria-hidden="true"></i>
-                        <a href="products.php" class="text-gray-700 hover:text-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md px-2 py-1 transition-colors" aria-label="Go to products page">Products</a>
+                        <a href="/products" class="text-gray-700 hover:text-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md px-2 py-1 transition-colors" aria-label="Go to products page">Products</a>
                     </div>
                 </li>
                 <li aria-current="page">
@@ -44,7 +44,7 @@ include 'includes/header.php';
             <div class="space-y-4">
                 <div class="relative group">
                     <div class="relative overflow-hidden rounded-2xl shadow-xl bg-white p-2 transform transition-all duration-300 hover:shadow-2xl hover:scale-[1.01] max-w-lg mx-auto">
-                        <img src="assets/images/<?php echo $product['image']; ?>" 
+                        <img src="/assets/images/<?php echo $product['image']; ?>" 
                              alt="<?php echo htmlspecialchars($product['name']); ?>" 
                              class="w-full aspect-square rounded-xl object-cover cursor-zoom-in transition-transform duration-500 group-hover:scale-105"
                              id="main-product-image"
@@ -67,7 +67,7 @@ include 'includes/header.php';
                 <!-- Image Gallery Thumbnails (if multiple images exist) -->
                 <div class="flex space-x-3 overflow-x-auto pb-2 justify-center">
                     <div class="flex-shrink-0 w-28 h-28 rounded-lg overflow-hidden border-2 border-green-200 cursor-pointer hover:border-green-400 transition-colors duration-300">
-                        <img src="assets/images/<?php echo $product['image']; ?>" alt="Product view 1" class="w-full h-full object-cover">
+                        <img src="/assets/images/<?php echo $product['image']; ?>" alt="Product view 1" class="w-full h-full object-cover">
                     </div>
                     <!-- Add more thumbnails if product has multiple images -->
                 </div>
@@ -202,11 +202,11 @@ include 'includes/header.php';
                 });
                 foreach(array_slice($relatedProducts, 0, 4) as $related):
                 ?>
-                <a href="product.php?id=<?php echo $related['id']; ?>" class="group block bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border border-gray-200 hover:border-green-400 hover:ring-4 hover:ring-green-200/50 overflow-hidden relative">
+                <a href="/product/<?php echo $related['id']; ?>" class="group block bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border border-gray-200 hover:border-green-400 hover:ring-4 hover:ring-green-200/50 overflow-hidden relative">
                     <div class="absolute inset-0 bg-gradient-to-br from-green-50/0 via-emerald-50/0 to-teal-50/0 group-hover:from-green-50/20 group-hover:via-emerald-50/10 group-hover:to-teal-50/20 transition-all duration-500 rounded-3xl"></div>
                     <div class="relative z-10">
                         <div class="relative overflow-hidden aspect-[4/3]">
-                            <img src="assets/images/<?php echo $related['image']; ?>" alt="<?php echo htmlspecialchars($related['name']); ?>" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                            <img src="/assets/images/<?php echo $related['image']; ?>" alt="<?php echo htmlspecialchars($related['name']); ?>" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <?php if($related['badge']): ?>
                             <div class="absolute top-3 left-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-xl transform group-hover:scale-105 transition-transform duration-300">
@@ -275,7 +275,7 @@ include 'includes/header.php';
 
     <?php include 'includes/footer.php'; ?>
 
-    <script src="js/app.js"></script>
+    <script src="/js/app.js"></script>
     <script>
         // Recently viewed functions
         function getRecentlyViewed() {
@@ -305,7 +305,7 @@ include 'includes/header.php';
                 <div class="absolute inset-0 bg-gradient-to-br from-green-50/0 via-emerald-50/0 to-teal-50/0 group-hover:from-green-50/20 group-hover:via-emerald-50/10 group-hover:to-teal-50/20 transition-all duration-500 rounded-3xl"></div>
                 <div class="relative z-10">
                     <div class="relative overflow-hidden aspect-[4/3]">
-                        <img src="assets/images/${product.image}" alt="${product.name.replace(/"/g, '&quot;')}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                        <img src="/assets/images/${product.image}" alt="${product.name.replace(/"/g, '&quot;')}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         ${product.badge ? `<div class="absolute top-3 left-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-xl transform group-hover:scale-105 transition-transform duration-300">${product.badge}</div>` : ''}
                         <button onclick="event.preventDefault(); event.stopPropagation(); toggleFavourite(${product.id}, '${product.name.replace(/'/g, "\\'").replace(/"/g, '&quot;')}', ${product.price}, '${product.image}', '${product.size || ''}', '${product.badge || ''}', '${product.category || ''}', ${product.rating || 0}, ${product.reviews || 0}, '${(product.description || '').substring(0, 200).replace(/'/g, "\\'").replace(/"/g, '&quot;')}', ${product.original_price || 0});" id="fav-btn-${product.id}" class="absolute top-3 right-3 w-6 h-6 bg-transparent bg-opacity-01 rounded-full flex items-center justify-center text-red-500 hover:text-red-600 hover:bg-opacity-100 transition-all duration-300 shadow-lg">
@@ -395,7 +395,7 @@ include 'includes/header.php';
                 addToCart(id, name, price, image, size, quantity, null);
                 // Redirect to checkout (you might need to implement this)
                 setTimeout(() => {
-                    window.location.href = 'checkout.php'; // Assuming you have a checkout page
+                    window.location.href = '/checkout'; // Assuming you have a checkout page
                 }, 500);
             };
 

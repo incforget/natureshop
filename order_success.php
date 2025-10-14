@@ -84,7 +84,7 @@ foreach ($all_orders as $ord) {
             </div>
             <!-- Actions -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="order_details.php?id=<?php echo $order_id; ?>" class="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition-colors font-semibold shadow-md">View Order Details</a>
+                <a href="/order-details/<?php echo $order_id; ?>" class="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition-colors font-semibold shadow-md">View Order Details</a>
                 <a href="index.php" class="bg-gray-600 text-white px-8 py-3 rounded-lg hover:bg-gray-700 transition-colors font-semibold shadow-md">Continue Shopping</a>
             </div>
         </div>
@@ -133,6 +133,6 @@ foreach ($all_orders as $ord) {
     // Clear cart after successful order
     try { localStorage.removeItem('cart'); } catch (e) { /* ignore */ }
     </script>
-    <script src="js/app.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 </html>

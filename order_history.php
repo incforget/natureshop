@@ -334,7 +334,7 @@ $available_statuses = ['pending', 'processing', 'shipped', 'delivered', 'cancell
 
                                         <div class="mt-6 pt-4 border-t border-gray-100">
                                             <div class="flex justify-end">
-                                                <a href="order_details.php?id=<?php echo $order['id']; ?>" class="inline-flex items-center bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-2 rounded-2xl hover:from-green-600 hover:to-emerald-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl font-medium">
+                                                <a href="/order-details/<?php echo $order['id']; ?>" class="inline-flex items-center bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-2 rounded-2xl hover:from-green-600 hover:to-emerald-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl font-medium">
                                                     <i class="fas fa-eye mr-2"></i>
                                                     View Details
                                                 </a>
@@ -528,6 +528,6 @@ $available_statuses = ['pending', 'processing', 'shipped', 'delivered', 'cancell
             });
         });
     </script>
-    <script src="js/app.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 </html>

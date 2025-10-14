@@ -27,11 +27,11 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']
     ?>
     
         <?php foreach($products as $product): ?>
-        <a href="product.php?id=<?php echo $product['id']; ?>" class="group block bg-white/90 backdrop-blur-sm rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 hover:border-green-300 hover:ring-2 hover:ring-green-200/50 overflow-hidden relative">
+        <a href="/product/<?php echo $product['id']; ?>" class="group block bg-white/90 backdrop-blur-sm rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 hover:border-green-300 hover:ring-2 hover:ring-green-200/50 overflow-hidden relative">
             <div class="absolute inset-0 bg-gradient-to-br from-green-50/0 via-emerald-50/0 to-teal-50/0 group-hover:from-green-50/30 group-hover:via-emerald-50/20 group-hover:to-teal-50/30 transition-all duration-500 rounded-3xl"></div>
             <div class="relative z-10">
                 <div class="relative overflow-hidden rounded-t-3xl aspect-[4/3]">
-                    <img src="assets/images/<?php echo $product['image']; ?>" alt="<?php echo htmlspecialchars($product['name']); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                    <img src="/assets/images/<?php echo $product['image']; ?>" alt="<?php echo htmlspecialchars($product['name']); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <?php if($product['badge']): ?>
                     <div class="absolute top-4 left-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-xl transform group-hover:scale-105 transition-transform duration-300">
@@ -109,7 +109,7 @@ include 'includes/header.php';
                         <div class="overflow-y-auto md:max-h-[calc(100vh-12rem)] pb-4" style="scrollbar-width: none; -ms-overflow-style: none;">
                             <ul class="sidebar-categories flex flex-row md:flex-col space-x-3 md:space-x-0 md:space-y-2">
                             <li>
-                                <a href="products.php<?php echo $search ? '?search='.urlencode($search) : ''; ?>" class="flex flex-col md:flex-row md:items-center items-center p-4 rounded-xl <?php echo !$category_slug ? 'bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 font-semibold shadow-md' : 'hover:bg-gray-50 text-gray-700 hover:shadow-sm'; ?> transition-all duration-300 group">
+                                <a href="/products<?php echo $search ? '?search='.urlencode($search) : ''; ?>" class="flex flex-col md:flex-row md:items-center items-center p-4 rounded-xl <?php echo !$category_slug ? 'bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 font-semibold shadow-md' : 'hover:bg-gray-50 text-gray-700 hover:shadow-sm'; ?> transition-all duration-300 group">
                                     <i class="fas fa-th-large mb-2 md:mb-0 md:mr-3 text-green-500 group-hover:scale-110 transition-transform"></i>
                                     <span class="text-center md:text-left md:ml-3 whitespace-nowrap font-medium">All Products</span>
                                 </a>
@@ -118,7 +118,7 @@ include 'includes/header.php';
                                 if($cat['slug'] === 'all') continue;
                             ?>
                             <li>
-                                <a href="products.php?category=<?php echo $cat['slug']; ?><?php echo $search ? '&search='.urlencode($search) : ''; ?>" class="flex flex-col md:flex-row md:items-center items-center p-4 rounded-xl <?php echo $category_slug == $cat['slug'] ? 'bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 font-semibold shadow-md' : 'hover:bg-gray-50 text-gray-700 hover:shadow-sm'; ?> transition-all duration-300 group">
+                                <a href="/products/category/<?php echo $cat['slug']; ?><?php echo $search ? '?search='.urlencode($search) : ''; ?>" class="flex flex-col md:flex-row md:items-center items-center p-4 rounded-xl <?php echo $category_slug == $cat['slug'] ? 'bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 font-semibold shadow-md' : 'hover:bg-gray-50 text-gray-700 hover:shadow-sm'; ?> transition-all duration-300 group">
                                     <?php echo getCategoryIcon($cat); ?>
                                     <span class="text-center md:text-left md:ml-3 whitespace-nowrap mt-2 md:mt-0 font-medium"><?php echo $cat['name']; ?> <span class="text-xs text-gray-500">(<?php echo $cat['count']; ?>)</span></span>
                                 </a>
@@ -148,11 +148,11 @@ include 'includes/header.php';
                         </div>
                         <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                             <?php foreach($products as $product): ?>
-                            <a href="product.php?id=<?php echo $product['id']; ?>" class="group block bg-white/90 backdrop-blur-sm rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 hover:border-green-300 hover:ring-2 hover:ring-green-200/50 overflow-hidden relative">
+                            <a href="/product/<?php echo $product['id']; ?>" class="group block bg-white/90 backdrop-blur-sm rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 hover:border-green-300 hover:ring-2 hover:ring-green-200/50 overflow-hidden relative">
                                 <div class="absolute inset-0 bg-gradient-to-br from-green-50/0 via-emerald-50/0 to-teal-50/0 group-hover:from-green-50/30 group-hover:via-emerald-50/20 group-hover:to-teal-50/30 transition-all duration-500 rounded-3xl"></div>
                                 <div class="relative z-10">
                                     <div class="relative overflow-hidden rounded-t-3xl aspect-[4/3]">
-                                        <img src="assets/images/<?php echo $product['image']; ?>" alt="<?php echo htmlspecialchars($product['name']); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                                        <img src="/assets/images/<?php echo $product['image']; ?>" alt="<?php echo htmlspecialchars($product['name']); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
                                         <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                         <?php if($product['badge']): ?>
                                         <div class="absolute top-4 left-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-xl transform group-hover:scale-105 transition-transform duration-300">
@@ -219,7 +219,7 @@ include 'includes/header.php';
 
     <?php include 'includes/footer.php'; ?>
 
-    <script src="js/app.js"></script>
+    <script src="/js/app.js"></script>
     <script>
         // Load cart count on page load
         document.addEventListener('DOMContentLoaded', function() {
@@ -228,9 +228,16 @@ include 'includes/header.php';
 
             let currentOffset = 12; // since initial is 12
 
-            // Helper to get current URLSearchParams (reads from window.location each time)
-            function getUrlParams() {
-                return new URLSearchParams(window.location.search);
+            // Helper to get current category and search from pretty URL
+            function getCurrentFilters() {
+                const pathParts = window.location.pathname.split('/').filter(p => p);
+                let category = null;
+                if (pathParts[0] === 'products' && pathParts[1] === 'category') {
+                    category = pathParts[2];
+                }
+                const urlParams = new URLSearchParams(window.location.search);
+                const search = urlParams.get('search') || '';
+                return { category, search };
             }
 
             // Centralized load-more logic so it can be attached to dynamic buttons
@@ -239,12 +246,10 @@ include 'includes/header.php';
                 const loadingSpinner = document.getElementById('loading-spinner');
                 loadingSpinner.classList.remove('hidden');
 
-                const urlParams = getUrlParams();
-                const category = urlParams.get('category') || '';
-                const search = urlParams.get('search') || '';
+                const { category, search } = getCurrentFilters();
 
                 // Fetch more products
-                fetch(`products.php?offset=${currentOffset}${category ? `&category=${category}` : ''}${search ? `&search=${encodeURIComponent(search)}` : ''}`, {
+                fetch(`/products.php?offset=${currentOffset}${category ? `&category=${category}` : ''}${search ? `&search=${encodeURIComponent(search)}` : ''}`, {
                     headers: {
                         'X-Requested-With': 'XMLHttpRequest'
                     }
@@ -329,18 +334,20 @@ include 'includes/header.php';
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     const href = this.getAttribute('href');
-                    const linkParams = new URLSearchParams(href.split('?')[1] || '');
-                    const category = linkParams.get('category') || null;
+                    const url = new URL(href, window.location.origin);
+                    const pathParts = url.pathname.split('/').filter(p => p);
+                    let category = null;
+                    if (pathParts[0] === 'products' && pathParts[1] === 'category') {
+                        category = pathParts[2];
+                    }
+                    const linkSearch = url.searchParams.get('search') || '';
 
                     // Show loading
                     const loadingSpinner = document.getElementById('loading-spinner');
                     loadingSpinner.classList.remove('hidden');
 
-                    // Read current search param from the live URL (so it's always up-to-date)
-                    const currentSearch = getUrlParams().get('search') || '';
-
                     // Build fetch URL
-                    const fetchUrl = `products.php${category ? `?category=${category}` : ''}${currentSearch ? `${category ? '&' : '?'}search=${encodeURIComponent(currentSearch)}` : ''}`;
+                    const fetchUrl = `/products.php${category ? `?category=${category}` : ''}${linkSearch ? `${category ? '&' : '?'}search=${encodeURIComponent(linkSearch)}` : ''}`;
 
                     // Fetch filtered products
                     fetch(fetchUrl, {
@@ -366,7 +373,13 @@ include 'includes/header.php';
                         ensureSeeMoreButton(data.has_more);
 
                         // Update URL
-                        const newUrl = `${window.location.pathname}${category ? `?category=${category}` : ''}${currentSearch ? `${category ? '&' : '?'}search=${encodeURIComponent(currentSearch)}` : ''}`;
+                        let newUrl = '/products';
+                        if (category) {
+                            newUrl += '/category/' + category;
+                        }
+                        if (linkSearch) {
+                            newUrl += '?search=' + encodeURIComponent(linkSearch);
+                        }
                         history.pushState(null, '', newUrl);
 
                         // Update active category classes
@@ -396,9 +409,8 @@ include 'includes/header.php';
                 loadingSpinner.classList.remove('hidden');
 
                 // Build fetch URL keeping current category if present in URL
-                const currentParams = getUrlParams();
-                const category = currentParams.get('category') || '';
-                const fetchUrl = `products.php${category ? `?category=${category}` : ''}${searchValue ? `${category ? '&' : '?'}search=${encodeURIComponent(searchValue)}` : ''}`;
+                const { category } = getCurrentFilters();
+                const fetchUrl = `/products.php${category ? `?category=${category}` : ''}${searchValue ? `${category ? '&' : '?'}search=${encodeURIComponent(searchValue)}` : ''}`;
 
                 fetch(fetchUrl, {
                     headers: {
@@ -421,7 +433,7 @@ include 'includes/header.php';
                     ensureSeeMoreButton(data.has_more);
 
                     // Update URL
-                    const newUrl = `${window.location.pathname}${category ? `?category=${category}` : ''}${searchValue ? `${category ? '&' : '?'}search=${encodeURIComponent(searchValue)}` : ''}`;
+                    const newUrl = `/products${category ? `/category/${category}` : ''}${searchValue ? `?search=${encodeURIComponent(searchValue)}` : ''}`;
                     history.pushState(null, '', newUrl);
 
                     // Re-init favourites
@@ -437,7 +449,7 @@ include 'includes/header.php';
             }
 
             // Desktop header search form
-            const headerSearchForm = document.querySelector('header form[method="GET"][action="products.php"]');
+            const headerSearchForm = document.querySelector('header form[method="GET"][action="/products"]');
             if (headerSearchForm) {
                 headerSearchForm.addEventListener('submit', function(e) {
                     e.preventDefault();
@@ -448,10 +460,10 @@ include 'includes/header.php';
             }
 
             // Mobile search form (in header markup under md:hidden)
-            const mobileSearchForm = document.querySelector('form[method="GET"][action="products.php"].md\:hidden');
+            const mobileSearchForm = document.querySelector('form[method="GET"][action="/products"].md\\:hidden');
             // Fallback: select any mobile form by checking nearest under header
             if (!mobileSearchForm) {
-                const mobileFormFallback = document.querySelector('#mobile-menu') ? document.querySelector('#mobile-menu').previousElementSibling && document.querySelector('#mobile-menu').previousElementSibling.querySelector('form[action="products.php"]') : null;
+                const mobileFormFallback = document.querySelector('#mobile-menu') ? document.querySelector('#mobile-menu').previousElementSibling && document.querySelector('#mobile-menu').previousElementSibling.querySelector('form[action="/products"]') : null;
                 if (mobileFormFallback) {
                     mobileFormFallback.addEventListener('submit', function(e) {
                         e.preventDefault();

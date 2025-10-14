@@ -552,7 +552,7 @@ $order_history = getOrderStatusHistory($order_id);
                             <td class="py-3 px-4 min-w-0">
                                 <div class="flex items-center">
                                     <div class="w-16 h-16 bg-gray-100 rounded-xl overflow-hidden mr-4 flex-shrink-0">
-                                        <img src="assets/images/<?php echo $item['product_image']; ?>" alt="<?php echo $item['product_name']; ?>" class="w-full h-full object-cover">
+                                        <img src="/assets/images/<?php echo $item['product_image']; ?>" alt="<?php echo $item['product_name']; ?>" class="w-full h-full object-cover">
                                     </div>
                                     <div class="min-w-0 flex-1">
                                         <p class="font-medium text-gray-800 text-lg truncate"><?php echo $item['product_name']; ?></p>
@@ -812,6 +812,6 @@ $order_history = getOrderStatusHistory($order_id);
             }
         });
     </script>
-    <script src="js/app.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 </html>

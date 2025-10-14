@@ -309,7 +309,7 @@ if (isset($_SESSION['user_id'])) {
                                                     <?php echo ucfirst($order['status']); ?>
                                                 </span>
                                             </div>
-                                            <a href="order_details.php?id=<?php echo $order['id']; ?>"
+                                            <a href="/order-details/<?php echo $order['id']; ?>"
                                                class="inline-flex items-center bg-gradient-to-r from-green-500 to-emerald-600 text-white px-2 py-3 rounded-2xl font-semibold hover:from-green-600 hover:to-emerald-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
                                                 <i class="fas fa-eye mr-2"></i>
                                                 View Details
@@ -340,7 +340,7 @@ if (isset($_SESSION['user_id'])) {
 
     <?php include 'includes/footer.php'; ?>
 
-    <script src="js/app.js"></script>
+    <script src="/js/app.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             updateCartCount();

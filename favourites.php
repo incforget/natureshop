@@ -112,6 +112,6 @@ include 'includes/header.php';
             });
         }
     </script>
-    <script src="js/app.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 </html>

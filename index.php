@@ -23,7 +23,7 @@ $products = getProducts(8); // fetch a small set for best sellers on homepage
                     Embrace wellness with our curated collection of organic herbs, essential oils, and natural remedies
                 </p>
                 <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                    <a href="products.php" class="bg-white text-green-700 px-10 py-4 rounded-full font-bold text-lg hover:bg-green-50 transition-all transform hover:scale-105 shadow-2xl hover:shadow-green-500/25 flex items-center">
+                    <a href="/products" class="bg-white text-green-700 px-10 py-4 rounded-full font-bold text-lg hover:bg-green-50 transition-all transform hover:scale-105 shadow-2xl hover:shadow-green-500/25 flex items-center">
                         <i class="fas fa-shopping-cart mr-3"></i>
                         Shop Now
                     </a>
@@ -50,7 +50,7 @@ $products = getProducts(8); // fetch a small set for best sellers on homepage
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <?php foreach($categories as $cat): ?>
-                <a href="products.php?category=<?php echo $cat['slug']; ?>" class="cursor-pointer group">
+                <a href="/products/category/<?php echo $cat['slug']; ?>" class="cursor-pointer group">
                     <div class="bg-white rounded-xl p-6 text-center shadow-lg group-hover:shadow-2xl group-hover:-translate-y-1 transform transition">
                         <div class="<?php echo $cat['icon_type'] === 'svg' ? 'bg-white' : 'bg-emerald-50'; ?> w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4">
                             <?php echo getCategoryIcon($cat, 'large'); ?>
@@ -110,11 +110,11 @@ $products = getProducts(8); // fetch a small set for best sellers on homepage
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="best-sellers">
                 <?php foreach($products as $product): ?>
-                <a href="product.php?id=<?php echo $product['id']; ?>" class="group block bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border border-gray-200 hover:border-green-400 hover:ring-4 hover:ring-green-200/50 overflow-hidden relative">
+                <a href="/product/<?php echo $product['id']; ?>" class="group block bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border border-gray-200 hover:border-green-400 hover:ring-4 hover:ring-green-200/50 overflow-hidden relative">
                     <div class="absolute inset-0 bg-gradient-to-br from-green-50/0 via-emerald-50/0 to-teal-50/0 group-hover:from-green-50/20 group-hover:via-emerald-50/10 group-hover:to-teal-50/20 transition-all duration-500 rounded-3xl"></div>
                     <div class="relative z-10">
                         <div class="relative overflow-hidden aspect-[4/3]">
-                            <img src="assets/images/<?php echo $product['image']; ?>" alt="<?php echo $product['name']; ?>" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                            <img src="/assets/images/<?php echo $product['image']; ?>" alt="<?php echo $product['name']; ?>" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <?php if($product['badge']): ?>
                             <div class="absolute top-3 left-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-xl transform group-hover:scale-105 transition-transform duration-300">
@@ -178,7 +178,7 @@ $products = getProducts(8); // fetch a small set for best sellers on homepage
 
     <!-- Vue App -->
     <div id="app"></div>
-    <script src="js/app.js"></script>
+    <script src="/js/app.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             updateCartCount();

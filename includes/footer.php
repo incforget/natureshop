@@ -109,7 +109,7 @@
                         <button onclick="closeCartModal()" class="flex-1 bg-gray-200 text-gray-800 py-3 sm:py-4 px-6 rounded-xl font-semibold hover:bg-gray-300 transition-colors text-base sm:text-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
                             Continue Shopping
                         </button>
-                        <a href="checkout.php" class="flex-1 bg-gradient-to-r from-green-500 to-emerald-600 text-white py-3 sm:py-4 px-6 rounded-xl font-semibold hover:from-green-600 hover:to-emerald-700 transition-all text-center text-base sm:text-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+                        <a href="/checkout" class="flex-1 bg-gradient-to-r from-green-500 to-emerald-600 text-white py-3 sm:py-4 px-6 rounded-xl font-semibold hover:from-green-600 hover:to-emerald-700 transition-all text-center text-base sm:text-lg focus:outline-none focus:ring-2 focus:ring-green-400">
                             Proceed to Checkout
                         </a>
                     </div>

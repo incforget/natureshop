@@ -32,7 +32,7 @@
     <!-- Bootstrap Icons for additional icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="bg-gray-50">
     <?php // config and helpers already included in <head> ?>
@@ -46,7 +46,7 @@
                     <?php
                     $site_name = get_setting('site_name', 'NatureBD');
                     $site_tagline = get_setting('site_tagline', 'Premium Naturals');
-                    $site_logo = get_setting('logo', 'assets/images/logo.png');
+                    $site_logo = get_setting('logo', '/assets/images/logo.png');
                     $icon_id = 'site-logo-icon';
                     $img_id = 'site-logo-img';
                     ?>
@@ -55,7 +55,7 @@
                         <i class="fas fa-leaf text-white text-xl"></i>
                     </div>
                     <div>
-                        <a href="index.php" class="flex items-center space-x-3">
+                        <a href="/" class="flex items-center space-x-3">
                             <?php if ($site_logo): ?>
                                 <img id="<?php echo $img_id; ?>" src="<?php echo htmlspecialchars($site_logo); ?>" alt="<?php echo htmlspecialchars($site_name); ?>" class="w-8 h-8 object-contain mr-2" onload="document.getElementById('<?php echo $icon_id; ?>').style.display='none';" onerror="this.style.display='none'; document.getElementById('<?php echo $icon_id; ?>').style.display='flex';">
                             <?php endif; ?>
@@ -69,23 +69,23 @@
 
                 <!-- Navigation -->
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="index.php" class="flex items-center text-green-600 font-semibold text-lg hover:text-green-700 hover:bg-green-50 px-3 py-2 rounded-lg transition-all duration-200">
+                    <a href="/" class="flex items-center text-green-600 font-semibold text-lg hover:text-green-700 hover:bg-green-50 px-3 py-2 rounded-lg transition-all duration-200">
                         <i class="fas fa-home mr-2"></i>Home
                     </a>
-                    <a href="products.php" class="flex items-center text-gray-700 hover:text-green-600 hover:bg-green-50 px-3 py-2 rounded-lg text-lg transition-all duration-200">
+                    <a href="/products" class="flex items-center text-gray-700 hover:text-green-600 hover:bg-green-50 px-3 py-2 rounded-lg text-lg transition-all duration-200">
                         <svg class="mr-2" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
 <polyline points="3.27,6.96 12,12.01 20.73,6.96"></polyline>
 <line x1="12" y1="22.08" x2="12" y2="12"></line>
 </svg>Products
                     </a>
-                    <a href="favourites.php" class="flex items-center text-gray-700 hover:text-green-600 hover:bg-green-50 px-3 py-2 rounded-lg text-lg transition-all duration-200">
+                    <a href="/favourites" class="flex items-center text-gray-700 hover:text-green-600 hover:bg-green-50 px-3 py-2 rounded-lg text-lg transition-all duration-200">
                         <i class="fas fa-heart mr-2"></i>Favourites
                     </a>
-                    <a href="order_history.php" class="flex items-center text-gray-700 hover:text-green-600 hover:bg-green-50 px-3 py-2 rounded-lg text-lg transition-all duration-200">
+                    <a href="/order-history" class="flex items-center text-gray-700 hover:text-green-600 hover:bg-green-50 px-3 py-2 rounded-lg text-lg transition-all duration-200">
                         <i class="fas fa-list mr-2"></i>Orders
                     </a>
-                    <a href="profile.php" class="flex items-center text-gray-700 hover:text-green-600 hover:bg-green-50 px-3 py-2 rounded-lg text-lg transition-all duration-200">
+                    <a href="/profile" class="flex items-center text-gray-700 hover:text-green-600 hover:bg-green-50 px-3 py-2 rounded-lg text-lg transition-all duration-200">
                         <i class="fas fa-user mr-2"></i>Profile
                     </a>
                 </nav>
@@ -93,24 +93,24 @@
                 <!-- Search and Cart -->
                 <div class="flex items-center space-x-4">
                     <div class="hidden md:block relative">
-                        <form method="GET" action="products.php" class="flex">
+                        <form method="GET" action="/products" class="flex">
                             <input type="text" name="search" placeholder="Search natural products..." class="border border-gray-300 rounded-l-full px-4 py-2 w-72 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
                             <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded-r-full hover:bg-green-700 transition-colors">
                                 <i class="fas fa-search"></i>
                             </button>
                         </form>
                     </div>
-                    <a href="favourites.php" class="md:hidden text-gray-700 hover:text-green-600 relative p-3 rounded-full hover:bg-green-50 transition-all duration-200 group">
+                    <a href="/favourites" class="md:hidden text-gray-700 hover:text-green-600 relative p-3 rounded-full hover:bg-green-50 transition-all duration-200 group">
                         <i class="fas fa-heart text-xl"></i>
                     </a>
-                    <a href="products.php" class="md:hidden text-gray-700 hover:text-green-600 p-3 rounded-full hover:bg-green-50 transition-all duration-200">
+                    <a href="/products" class="md:hidden text-gray-700 hover:text-green-600 p-3 rounded-full hover:bg-green-50 transition-all duration-200">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
 <polyline points="3.27,6.96 12,12.01 20.73,6.96"></polyline>
 <line x1="12" y1="22.08" x2="12" y2="12"></line>
 </svg>
                     </a>
-                    <a href="profile.php" class="md:hidden text-gray-700 hover:text-green-600 p-3 rounded-full hover:bg-green-50 transition-all duration-200">
+                    <a href="/profile" class="md:hidden text-gray-700 hover:text-green-600 p-3 rounded-full hover:bg-green-50 transition-all duration-200">
                         <i class="fas fa-user text-xl"></i>
                     </a>
                     <!-- Mobile Menu Button -->
@@ -122,7 +122,7 @@
 
             <!-- Mobile Search -->
             <div class="md:hidden pb-4">
-                <form method="GET" action="products.php" class="flex">
+                <form method="GET" action="/products" class="flex">
                     <input type="text" name="search" placeholder="Search products..." class="border border-gray-300 rounded-l-full px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
                     <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded-r-full hover:bg-green-700">
                         <i class="fas fa-search"></i>
@@ -133,23 +133,23 @@
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100 hidden">
                 <div class="py-4 space-y-3">
-                    <a href="index.php" class="flex items-center text-green-600 font-semibold py-3 px-4 hover:bg-green-50 rounded-lg transition-all duration-200">
+                    <a href="/" class="flex items-center text-green-600 font-semibold py-3 px-4 hover:bg-green-50 rounded-lg transition-all duration-200">
                         <i class="fas fa-home mr-3"></i>Home
                     </a>
-                    <a href="products.php" class="flex items-center text-gray-700 hover:text-green-600 py-3 px-4 hover:bg-green-50 rounded-lg transition-all duration-200">
+                    <a href="/products" class="flex items-center text-gray-700 hover:text-green-600 py-3 px-4 hover:bg-green-50 rounded-lg transition-all duration-200">
                         <svg class="mr-3" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
 <polyline points="3.27,6.96 12,12.01 20.73,6.96"></polyline>
 <line x1="12" y1="22.08" x2="12" y2="12"></line>
 </svg>Products
                     </a>
-                    <a href="favourites.php" class="flex items-center text-gray-700 hover:text-green-600 py-3 px-4 hover:bg-green-50 rounded-lg transition-all duration-200">
+                    <a href="/favourites" class="flex items-center text-gray-700 hover:text-green-600 py-3 px-4 hover:bg-green-50 rounded-lg transition-all duration-200">
                         <i class="fas fa-heart mr-3"></i>Favourites
                     </a>
-                    <a href="order_history.php" class="flex items-center text-gray-700 hover:text-green-600 py-3 px-4 hover:bg-green-50 rounded-lg transition-all duration-200">
+                    <a href="/order-history" class="flex items-center text-gray-700 hover:text-green-600 py-3 px-4 hover:bg-green-50 rounded-lg transition-all duration-200">
                         <i class="fas fa-list mr-3"></i>Orders
                     </a>
-                    <a href="profile.php" class="flex items-center text-gray-700 hover:text-green-600 py-3 px-4 hover:bg-green-50 rounded-lg transition-all duration-200">
+                    <a href="/profile" class="flex items-center text-gray-700 hover:text-green-600 py-3 px-4 hover:bg-green-50 rounded-lg transition-all duration-200">
                         <i class="fas fa-user mr-3"></i>Profile
                     </a>
                 </div>
