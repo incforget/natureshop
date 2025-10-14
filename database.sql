@@ -125,13 +125,13 @@ CREATE INDEX idx_order_items_product_id ON order_items(product_id);
 
 -- Insert categories with robust icon system
 INSERT INTO categories (name, slug, description, icon_type, icon_class, sticker_url) VALUES
-('Honey', 'honey', 'Pure natural honey varieties', 'fontawesome', 'fas fa-tint', NULL),
+('Honey', 'honey', 'Pure natural honey varieties', 'fontawesome', 'fas fa-jar', NULL),
 ('Spices', 'spices', 'Premium quality spices and seasonings', 'fontawesome', 'fas fa-pepper-hot', NULL),
 ('Oils', 'oils', 'Natural and essential oils', 'fontawesome', 'fas fa-oil-can', NULL),
 ('Herbs', 'herbs', 'Fresh and dried herbs', 'fontawesome', 'fas fa-leaf', NULL),
 ('Tea & Coffee', 'tea', 'Premium tea and coffee products', 'fontawesome', 'fas fa-mug-hot', NULL),
 ('Grains & Seeds', 'grains', 'Healthy grains and seeds', 'fontawesome', 'fas fa-seedling', NULL),
-('Skin Care', 'skincare', 'Natural skin care products', 'bootstrap', 'bi bi-moisture', NULL),
+('Skin Care', 'skincare', 'Natural skin care products', 'fontawesome', 'fas fa-spa', NULL),
 ('Health Supplements', 'health', 'Ayurvedic and health supplements', 'fontawesome', 'fas fa-heart', NULL);
 
 -- Insert sample products with enhanced data
