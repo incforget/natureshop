@@ -211,7 +211,7 @@ $order_history = getOrderStatusHistory($order_id);
                 <p class="text-gray-600">Track and manage your order information</p>
             </div>
             <div class="flex flex-col sm:flex-row gap-4">
-                <a href="order_history.php" class="bg-white text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-50 flex items-center justify-center shadow-lg border border-gray-200 transform hover:scale-105 transition-all duration-200 text-sm">
+                <a href="/order-history.php" class="bg-white text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-50 flex items-center justify-center shadow-lg border border-gray-200 transform hover:scale-105 transition-all duration-200 text-sm">
                     <i class="fas fa-arrow-left mr-2"></i>Back to Orders
                 </a>
             </div>
