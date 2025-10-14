@@ -1,0 +1,32 @@
+RewriteEngine On
+
+# Product pages: /product/123 -> product.php?id=123
+RewriteRule ^product/([0-9]+)$ product.php?id=$1 [L]
+
+# Products listing: /products -> products.php
+RewriteRule ^products/?$ products.php [L]
+
+# Products by category: /products/category/herbs -> products.php?category=herbs
+RewriteRule ^products/category/([^/]+)$ products.php?category=$1 [L,QSA]
+
+# Profile: /profile -> profile.php
+RewriteRule ^profile/?$ profile.php [L,QSA]
+
+# Order history: /order-history -> order_history.php
+RewriteRule ^order-history/?$ order_history.php [L,QSA]
+
+# Order details: /order-details/123 -> order_details.php?id=123
+RewriteRule ^order-details/([0-9]+)$ order_details.php?id=$1 [L]
+
+# Favourites: /favourites -> favourites.php
+RewriteRule ^favourites/?$ favourites.php [L,QSA]
+
+# Checkout: /checkout -> checkout.php
+RewriteRule ^checkout/?$ checkout.php [L,QSA]
+
+# Order success: /order-success/123 -> order_success.php?order_id=123
+RewriteRule ^order-success/([0-9]+)$ order_success.php?order_id=$1 [L]
+
+# Admin routes (if needed, but keep separate)
+# RewriteRule ^admin/?$ admin/index.php [L]
+# etc., but since admin is separate, perhaps not needed for frontend
